@@ -1,0 +1,118 @@
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f9fafb;
+  color: #1f2937;
+  line-height: 1.6;
+}
+
+header {
+  background-color: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+nav a {
+  transition: all 0.3s ease;
+}
+
+nav a.active {
+  border-bottom: 2px solid #1f2937;
+  font-weight: 600;
+}
+
+.card {
+  background: white;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.hero img {
+  border-radius: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.1);
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #151f26;
+  transition: color 0.6s ease, transform 0.6s ease; /* added transition */
+}
+
+.hero-content h1:hover {
+  color: #71463a;
+  transform: scale(1.02);
+}
+
+/* Hide menu button on desktop */
+.menu-toggle { display: none; font-size: 1.5rem; background: none; border: none; cursor: pointer; }
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  nav ul.nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+
+  nav ul.nav-links.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: block;
+    color: #151f26;
+  }
+
+  nav { flex-wrap: wrap; }
+}
+
+/* Contact intro paragraph */
+.contact-intro {
+  max-width: 700px;
+  margin: 0 auto 2rem; /* center and add spacing below */
+  font-size: 1.125rem;
+  color: #151f26;
+  text-align: center;
+  line-height: 1.6;
+}
+
+
+/* Increase icon size slightly */
+ion-icon {
+  font-size: 2rem; /* adjust size as needed, e.g., 1.5rem */
+  vertical-align: middle; /* keeps it aligned nicely with text */
+}
+
+/* Initially show closed mail, hide open mail */
+.mail-btn ion-icon.open {
+  display: none;
+}
+
+/* On hover, swap icons */
+.mail-btn:hover ion-icon.closed {
+  display: none;
+}
+.mail-btn:hover ion-icon.open {
+  display: inline-block;
+}
+
+/* Optional: add transition for smoother effect */
+.mail-btn ion-icon {
+  transition: transform 0.3s ease;
+}
+.mail-btn:hover ion-icon.open {
+  transform: translateY(-2px); /* subtle pop effect */
+}

@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bradley Martin Gerber Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+<style>
+/* Base */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body { font-family: 'Inter', sans-serif; color: #151f26; background: #cabab1; line-height: 1.6; scroll-behavior: smooth; }
+a { text-decoration: none; color: inherit; outline: none; }
+
+/* Header */
+header {
+  position: fixed; top: 0; left: 0; right: 0; background: rgba(202, 186, 177,0.95); backdrop-filter: blur(10px); z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+nav { max-width: 1200px; margin: auto; padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+nav .logo { font-weight: 700; font-size: 1.25rem; color: #151f26; }
+nav ul { display: flex; gap: 1.5rem; }
+nav ul li a { padding-bottom: 4px; transition: 0.3s; color: #71463a; cursor: pointer; }
+nav ul li a:hover { color: #151f26; }
+nav ul li a.active { border-bottom: 2px solid #151f26; font-weight: 600; color: #151f26; }
+
+/* Hero */
+#hero { padding: 8rem 2rem 4rem; display: flex; flex-wrap: wrap; justify-content: center; gap: 2rem; align-items: center; transition: color 0.6s ease, transform 0.6s ease; }
+.hero-content { flex: 1; max-width: 600px; }
+.hero-content h1 { font-size: 3rem; font-weight: 700; margin-bottom: 1rem; color: #151f26; transition: color 0.6s ease, transform 0.6s ease; }
+.hero-content h1:hover { color: #71463a; transform: scale(1.02); }
+.hero-content p { margin-bottom: 1.5rem; color: #151f26; font-size: 1.125rem; }
+.hero-content .buttons { display: flex; gap: 1rem; flex-wrap: wrap; }
+.hero-content .buttons a { padding: 0.75rem 1.5rem; border-radius: 0.75rem; font-weight: 600; transition: 0.3s; display: flex; align-items: center; gap: 0.5rem; }
+.hero-content .buttons a.primary { background: #d69939; color: white; }
+.hero-content .buttons a.primary:hover { background: #71463a; }
+.hero-content .buttons a.secondary { border: 1px solid #71463a; color: #151f26; }
+.hero-content .buttons a.secondary:hover { background: #cabab1; }
+.hero-image { flex: 1; max-width: 450px; border-radius: 1rem; overflow: hidden; box-shadow: 0 10px 20px rgba(0,0,0,0.1); transition: 0.3s; }
+.hero-image img { width: 100%; display: block; }
+.hero-image:hover { transform: scale(1.03); }
+
+/* Sections */
+section { padding: 4rem 2rem; max-width: 1200px; margin: auto; background: #cabab1; border-radius: 1rem; margin-bottom: 2rem; }
+section h2 { font-size: 2rem; font-weight: 700; margin-bottom: 2rem; color: #151f26; }
+section p { color: #151f26; margin-bottom: 1.5rem; }
+
+/* Skills */
+.skills-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit,minmax(250px,1fr)); }
+.skill-card { background: #ffffff; padding: 2rem; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+.skill-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+.skill-card h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.75rem; color: #151f26; }
+.skill-card p { color: #71463a; }
+
+/* Experience */
+.experience-timeline { display: flex; flex-direction: column; gap: 2rem; }
+.experience-item { background: #ffffff; padding: 2rem; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; }
+.experience-item:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+.experience-item h3 { font-size: 1.25rem; font-weight: 600; margin-bottom: 0.5rem; color: #151f26; }
+.experience-item p { color: #71463a; }
+
+/* Contact */
+.contact-grid { display: grid; gap: 2rem; grid-template-columns: repeat(auto-fit,minmax(200px,1fr)); }
+.contact-card { background: #ffffff; padding: 2rem; border-radius: 1rem; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: 0.3s; text-align: center; display: flex; flex-direction: column; align-items: center; gap: 0.5rem; }
+.contact-card:hover { transform: translateY(-5px); box-shadow: 0 15px 25px rgba(0,0,0,0.1); }
+.contact-card h3 { font-weight: 600; margin-bottom: 0.5rem; color: #151f26; }
+.contact-card p { color: #71463a; }
+
+/* Footer */
+footer { margin-top: 4rem; padding: 2rem; text-align: center; color: #151f26; font-size: 0.875rem; }
+
+/* Responsive */
+@media (max-width: 768px) {
+  #hero { flex-direction: column; }
+  nav ul { flex-direction: column; gap: 1rem; }
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav-container">
+    <div class="logo">Bradley Martin Gerber</div>
+
+    <!-- Menu button for mobile -->
+    <button class="menu-toggle" aria-label="Toggle Menu">☰</button>
+
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+
+<section id="hero">
+  <div class="hero-content">
+    <h1>Administrative Manager</h1>
+    <p>Experienced administrator with 8+ years of specialised management, executive support, law and regulation.</p>
+    <div class="buttons">
+      <a href="mailto:B.M.Gerber@Outlook.com" class="primary mail-btn">
+        <ion-icon name="mail" class="closed"></ion-icon>
+        <ion-icon name="mail-open" class="open"></ion-icon>
+         Get in Touch
+      </a>
+      <a href="https://www.linkedin.com/in/bradley-gerber-387012323/" class="secondary">
+        <ion-icon name="logo-linkedin"></ion-icon> LinkedIn
+      </a>
+    </div>
+  </div>
+  <div class="hero-image">
+    <img src="assets/Profile.jpg" alt="Professional administrator">
+  </div>
+</section>
+
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am hard working with refined attention to detail administrator</p>
+  <p>I've developed strong inter-communication skills, allowing me to effectively prioritize tasks, coordinate across departments and maintain confidentiality in sensitive situations. I thrive in well-organized and communicative environments and am committed to fufilling my duties faithfully improving administrative support.</p>
+  <p>I hold a certification in Office Administration and Management, An I am currently persuing my Degree in Public Administration.</p>
+</section>
+
+<section id="skills">
+  <h2>Core Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-card"><h3>Client relations</h3><p>Effectively assited clients with any queries</p></div>
+    <div class="skill-card"><h3>Documentation</h3><p>Organized and archieved sensitive documents</p></div>
+    <div class="skill-card"><h3>Management</h3><p>Enacted executive orders to employees, addressed and resolved employee queries</p></div>
+    <div class="skill-card"><h3>Law and Regulation</h3><p>Monitored child law regulations, advised employee contract regulation</p></div>
+    <div class="skill-card"><h3>Communication</h3><p>Strong communication skills dealing with employees and clients daily</p></div>
+    <div class="skill-card"><h3>Data Management</h3><p>Assited in client statement issuing, managed report outcomes</p></div>
+  </div>
+</section>
+
+
+<section id="experience">
+  <h2>Experience</h2>
+  <div class="experience-timeline">
+    <div class="experience-item">
+      <h3>Administration, Management, Educational Management - The Sycamore Tree Academy (2025-Present)</h3>
+      <p>Coordinated daily affairs, Managed executive calendars, Addressed employee queries, Facility maintenance checks and report</p>
+    </div>
+    <div class="experience-item">
+      <h3>Home Manager - Private Estate Residence (2019-2024)</h3>
+      <p>Building maintenance reports, Interior coordination, Logged parcel package deliveries, Directed intruction to cleaning and garden staff for owners request</p>
+    </div>
+    <div class="experience-item">
+      <h3>Business Administrator - Motor Mac KZN (2022-2023)</h3>
+      <p>Data capturing, Executive support, Travel and logistics planning</p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Get In Touch</h2>
+  <p class="contact-intro">
+    I'm always interested in hearing about new opportunities and connecting with professionals. Feel free to reach out!
+  </p>
+  <div class="contact-grid">
+    <a href="mailto:B.M.Gerber@Outlook.com" class="contact-card">
+      <ion-icon name="mail"></ion-icon>
+      <h3>Email</h3>
+      <p>B.M.Gerber@Outlook.com</p>
+    </a>
+    <a href="tel:+27633237528" class="contact-card">
+      <ion-icon name="call"></ion-icon>
+      <h3>Phone</h3>
+      <p>+27 63 323-75828</p>
+    </a>
+    <a href="https://www.linkedin.com/in/bradley-gerber-387012323/" class="contact-card">
+      <ion-icon name="logo-linkedin"></ion-icon>
+      <h3>LinkedIn</h3>
+      <p>linkedin.com/in/bradley-gerber</p>
+    </a>
+  </div>
+</section>
+
+
+
+<footer>© 2025 Bradley Martin Gerber. All rights reserved.</footer>
+
+<!-- Scripts -->
+<script>
+
+  // Smooth scrolling for nav links
+  document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', function(e){
+      e.preventDefault();
+      const target = document.querySelector(this.getAttribute('href'));
+      if(target){
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // Scroll spy for active nav
+  const sections = document.querySelectorAll("section");
+  const navLinks = document.querySelectorAll("nav ul li a");
+  window.addEventListener("scroll", () => {
+    let current = "";
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop - 150;
+      if (window.pageYOffset >= sectionTop) current = section.getAttribute("id");
+    });
+    navLinks.forEach(link => {
+      link.classList.remove("active");
+      if (link.getAttribute("href") === "#" + current) link.classList.add("active");
+    });
+  });
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinksContainer = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinksContainer.classList.toggle("active");
+  });
+</script>
+
+<script src="https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js"></script>
+</body>
+</html>
