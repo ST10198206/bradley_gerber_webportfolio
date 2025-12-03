@@ -64,24 +64,96 @@ nav a.active {
 
 
 /* ----------------------------------------------------------
-   EDUCATION / MODULE LIST
+   EDUCATION SECTION
 ---------------------------------------------------------- */
-.module-list {
-  margin: 0.5rem 0 1.5rem 1rem;
+
+.education-card {
+  background: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  max-width: 900px;
+  margin: 0 auto;
+  margin: 0 auto 2rem;
+  transition: all 0.3s ease;
+}
+
+.education-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.12);
+}
+
+.edu-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #151f26;
+}
+
+.edu-subtitle {
   color: #71463a;
-  list-style-type: disc;
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.edu-intro {
+  color: #151f26;
+  margin-bottom: 2rem;
+}
+
+.semester-title {
+  margin-top: 2rem;
+  color: #d69939;
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+/* COLLAPSIBLE MODULES */
+.module {
+  background: #f5f1ee;
+  border-radius: 0.75rem;
+  margin: 1rem 0;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  border: 1px solid #cabab1;
+}
+
+.module:hover {
+  background: #e6dfdb;
+}
+
+.module summary {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  list-style: none;
+  cursor: pointer;
+  font-weight: 600;
+  color: #151f26;
+}
+
+.module summary::-webkit-details-marker {
+  display: none;
+}
+
+/* MODULE ICON */
+.module summary ion-icon {
+  font-size: 1.2rem;
+  color: #71463a;
+}
+
+/* MODULE LIST */
+.module-list {
+  margin-top: 0.75rem;
+  margin-left: 1.2rem;
+  color: #71463a;
 }
 
 .module-list li {
-  margin-bottom: 0.35rem;
+  margin-bottom: 0.4rem;
+  line-height: 1.4;
 }
 
-#education h4 {
-  margin-top: 1rem;
-  margin-bottom: 0.5rem;
-  color: #151f26;
-  font-weight: 600;
-}
 
 
 /* ----------------------------------------------------------
